@@ -20,6 +20,7 @@
     "axios": "^1.2.6",
     "eslint": "^8.33.0",
     "eslint-plugin-vue": "^9.9.0",
+    "js-cookie": "^3.0.1",
     "pinia": "^2.0.29",
     "prettier": "^2.8.3",
     "sass": "^1.57.1",

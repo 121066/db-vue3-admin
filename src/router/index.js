@@ -3,7 +3,7 @@ import { Home } from './router'
 const rot = [{
   path:'/login',
   name:'login',
-  component:()=>import('@/view/login/index.vue')
+  component:()=>import('@/view/Login/index.vue')
 },...Home]
 export const router = createRouter({
   history: createWebHashHistory(),

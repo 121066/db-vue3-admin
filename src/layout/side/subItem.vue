@@ -4,7 +4,7 @@
     <el-sub-menu :index="item.path" v-if="item.children&&item.children.length>0" :key="item.path">
       <template #title>
       <SvgIcon :iconName="item.meta.icon" />
-       <span>{{item.meta.title||'点击'}}</span>
+       <span>{{item.meta.title}}</span>
       </template>
       <sub-item :chil="item.children"></sub-item>
     </el-sub-menu>
