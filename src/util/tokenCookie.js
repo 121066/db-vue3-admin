@@ -1,9 +1,10 @@
 import Cookies from 'js-cookie'
-import Config from '../setting.js'
+import {Config} from '../setting.js'
 let tokenKey=Config.tokenKey
+
 //获取token
-export function getCookies(tokenKey){
-  return Cookies.get(tokenKey)
+export function getCookies(val){
+  return Cookies.get(val||tokenKey)
 }
 //移除Token
 export function remove(){

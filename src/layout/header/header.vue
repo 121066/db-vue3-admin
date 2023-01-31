@@ -6,7 +6,7 @@
 </template>
 <style lang="scss">
   .header{
-    padding: 0 10px;
+    padding: 5px 10px;
     height: 100%;
     display: flex;
     flex-direction: row;

@@ -15,6 +15,7 @@
   -webkit-text-size-adjust: 100%;
   --theme-color:#1B62BB;
   --theme-side:#3675C3;
+  --el-color-primary: var(--theme-color);
 }
 
 a {
