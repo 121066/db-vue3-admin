@@ -6,7 +6,7 @@ module.exports = {
 		node: true,
 	},
 	parser: 'vue-eslint-parser',
-	extends: ['plugin:vue/vue3-essential', 'plugin:vue/essential', 'eslint:recommended'],
+	extends: ['plugin:vue/vue3-essential', 'plugin:vue/essential', 'prettier','eslint:recommended'],
 	plugins: ['vue'],
 	rules: {
 		// http://eslint.cn/docs/rules/

@@ -56,7 +56,7 @@ const defaultActive = computed(() => {
   return r.path
 })
 onMounted(() => {
-  console.log(routesList, '路由',meta)
+  // console.log(routesList, '路由',meta)
   store.meta='奥林'
 })
 </script>

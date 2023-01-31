@@ -129,6 +129,15 @@ export const Homes = [
           icon: 'ele-Setting',
         },
       },
+      {
+        path:'/editor',
+        name:'editor',
+        component:()=>import('@/view/Editor/index.vue'),
+        meta:{
+          title:'富文本',
+          icon:'ele-EditPen'
+        }
+      }
     ],
   },
 ]
