@@ -1,0 +1,21 @@
+{
+    "name": "db-formsearch-plus",
+    "version": "1.0.2",
+    "description": "基于 element-Plus 和 vue3 封装的 PC 后台管理系统搜索组件",
+    "main": "db-formsearch-plus.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "am1210660",
+    "license": "ISC",
+    "keywords": [
+        "search",
+        "form",
+        "vue3",
+        "element-Plus",
+        "admin-pc",
+        "table-search",
+        "table"
+    ]
+}
