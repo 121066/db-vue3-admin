@@ -2,6 +2,7 @@
     <div>
         <formSearch ref="form" :opts="opts.opts" @formSearch="formSearchVal" />
         <el-button @click="info">获取子组件方法</el-button>
+        <div class="bg">你好</div>
     </div>
 </template>
 <script setup>
@@ -68,3 +69,8 @@ const info = () => {
     form.value.search();
 };
 </script>
+<style lang="scss" scoped>
+.bg {
+    color: $bg;
+}
+</style>

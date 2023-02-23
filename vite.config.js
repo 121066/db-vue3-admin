@@ -37,23 +37,31 @@ export default defineConfig((mode) => {
                 },
             },
         },
-        build: {
-            outDir: 'lib',
-            lib: {
-                entry: resolve(__dirname, './src/lib/main.js'), //指定组件编译入口文件
-                name: 'db-formsearch-plus',
-                fileName: 'db-formsearch-plus',
-            }, //库编译模式配置
-            rollupOptions: {
-                // 确保外部化处理那些你不想打包进库的依赖
-                external: ['vue'],
-                output: {
-                    // 在 UMD 构建模式下为这些外部化的依赖提供一个全局变量
-                    globals: {
-                        vue: 'Vue',
-                    },
+        //配置css全局
+        css: {
+            preprocessorOptions: {
+                scss: {
+                    additionalData: '@import "@/style/theme.scss";',
                 },
             },
         },
+        // build: {
+        //     outDir: 'lib',
+        //     lib: {
+        //         entry: resolve(__dirname, './src/lib/main.js'), //指定组件编译入口文件
+        //         name: 'db-formsearch-plus',
+        //         fileName: 'db-formsearch-plus',
+        //     }, //库编译模式配置
+        //     rollupOptions: {
+        //         // 确保外部化处理那些你不想打包进库的依赖
+        //         external: ['vue'],
+        //         output: {
+        //             // 在 UMD 构建模式下为这些外部化的依赖提供一个全局变量
+        //             globals: {
+        //                 vue: 'Vue',
+        //             },
+        //         },
+        //     },
+        // },
     };
 });
