@@ -5,7 +5,7 @@
   <i v-else :class="iconName" class="icon_size" :style="setIconSvgStyle"></i>
 </template>
 <script setup>
-import { computed } from "@vue/runtime-core"
+import { computed } from "vue"
 
 const props = defineProps({
   iconName: {

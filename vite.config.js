@@ -7,7 +7,7 @@ import vueSetupExtend from 'vite-plugin-vue-setup-extend';
 
 export default defineConfig((mode) => {
     const env = loadEnv(mode.mode, process.cwd());
-    console.log(env, '???', process.cwd(), 'cwd?');
+    console.log(env.VITE_API_URL_API, '???', process.cwd(), 'cwd?');
     return {
         plugins: [
             vue(),
@@ -26,15 +26,23 @@ export default defineConfig((mode) => {
         //配置代理
         server: {
             host: '127.0.0.1',
+            // lintOnSave: false,
             //配置默认端口
             port: '8866',
-            open: true, //是否自动打开浏览器
+            open: true, //是否自动打开浏览器,
+            // https:false,
             proxy: {
                 '/db': {
-                    target: 'https://dbyxs.xyz:8002',
-                    ws: true,
+                    target: env.VITE_API_URL_API,
+                    // ws: true,
                     changeOrigin: true,
                 },
+                '/goods':{
+                    target:env.VITE_API_URL_API,
+                    // ws:true
+                    changeOrigin:true,
+                    rewrite: (path) => path.replace(/^\/goods/, '')
+                }
             },
         },
         //配置css全局
