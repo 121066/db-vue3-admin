@@ -6,7 +6,6 @@
                 <div class="form_item_val">
                     <el-input
                         v-model="formData[item.key]"
-                        placeholder="请输入姓名"
                         :placeholder="
                             item.placeholder
                                 ? item.placeholder
