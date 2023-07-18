@@ -7,7 +7,7 @@
             border
             :tree-props="{ hasChildren: 'hasChildren', children: 'children' }"
         >
-            <el-table-column prop="index" label="序号" width="150">
+            <el-table-column prop="index" label="序号" width="150" type="">
             </el-table-column>
             <el-table-column prop="date" label="Date" sortable />
             <el-table-column prop="name" label="Name" sortable />
@@ -21,6 +21,5 @@ let tableData = reactive([...tables]);
 
 onMounted(() => {
     let data = indexData(tables);
-    console.log(data, '??');
 });
 </script>

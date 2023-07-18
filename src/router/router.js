@@ -41,6 +41,7 @@ export const Home = [
             },
         ],
     },
+
     {
         path: '/user',
         name: 'user',
@@ -91,6 +92,15 @@ export const Homes = [
                     title: '首页',
                     icon: 'ele-OfficeBuilding',
                 },
+            },
+            {
+                path: '/task',
+                name: 'task',
+                meta: {
+                    title: '任务',
+                    icon: 'ele-OfficeBuilding',
+                },
+                component: () => import('@/view/Task/index.vue'),
             },
             {
                 path: '/setting',
