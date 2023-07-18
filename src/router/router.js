@@ -94,6 +94,24 @@ export const Homes = [
                 },
             },
             {
+                path: '/table',
+                name: 'table',
+                component: () => import('@/view/Table/index.vue'),
+                meta: {
+                    title: '表格',
+                    icon: 'ele-EditPen',
+                },
+            },
+            {
+                path: '/date',
+                name: 'date',
+                component: () => import('@/view/Date/index.vue'),
+                meta: {
+                    title: '日期',
+                    icon: 'ele-Date',
+                },
+            },
+            {
                 path: '/task',
                 name: 'task',
                 meta: {
@@ -154,15 +172,6 @@ export const Homes = [
                 component: () => import('@/view/Labels/index.vue'),
                 meta: {
                     title: '标签',
-                    icon: 'ele-EditPen',
-                },
-            },
-            {
-                path: '/table',
-                name: 'table',
-                component: () => import('@/view/Table/index.vue'),
-                meta: {
-                    title: '表格',
                     icon: 'ele-EditPen',
                 },
             },
