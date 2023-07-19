@@ -1,13 +1,13 @@
-import { defineConfig, loadEnv } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import { resolve } from 'path';
 import AutoImport from 'unplugin-auto-import/vite';
+import { defineConfig, loadEnv } from 'vite';
 import vueSetupExtend from 'vite-plugin-vue-setup-extend';
 // https://vitejs.dev/config/
 
 export default defineConfig((mode) => {
     const env = loadEnv(mode.mode, process.cwd());
-    console.log(env.VITE_API_URL_API, '???', process.cwd(), 'cwd?');
+    // console.log(env.VITE_API_URL_API, '???', process.cwd(), 'cwd?');
     return {
         plugins: [
             vue(),
@@ -37,12 +37,12 @@ export default defineConfig((mode) => {
                     // ws: true,
                     changeOrigin: true,
                 },
-                '/goods':{
-                    target:env.VITE_API_URL_API,
+                '/goods': {
+                    target: env.VITE_API_URL_API,
                     // ws:true
-                    changeOrigin:true,
-                    rewrite: (path) => path.replace(/^\/goods/, '')
-                }
+                    changeOrigin: true,
+                    rewrite: (path) => path.replace(/^\/goods/, ''),
+                },
             },
         },
         //配置css全局
