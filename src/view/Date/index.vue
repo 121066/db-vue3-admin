@@ -51,7 +51,7 @@
                     v-model="data.toDay"
                     type="date"
                     placeholder="Pick one or more dates"
-                    :disabled-date="optionsToday"
+                    :disabled-date="optionsMonth"
                 />
             </div>
         </div>
@@ -74,5 +74,10 @@ const optionsToday = (time) => {
 };
 const optionsday = (time) => {
     return time.getTime() > +new Date().getTime() - 86400000;
+};
+const optionsMonth = (time) => {
+    return (
+        new Date().getTime() - 86400000 > +new Date().getTime() + 86400000 * 30
+    );
 };
 </script>
