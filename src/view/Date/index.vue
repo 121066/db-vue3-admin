@@ -43,6 +43,16 @@
                     :disabled-date="optionsToday"
                 />
             </div>
+            <h4>开始时间禁用一周</h4>
+            <div>
+                <el-date-picker
+                    v-model="data.yeserDays"
+                    type="daterange"
+                    start-placeholder="Start Date"
+                    end-placeholder="End Date"
+                    :disabled-date="optionsyeserDays"
+                />
+            </div>
         </div>
         <div v-if="data.tabIndex === 3">
             <h4>禁用时间一个月</h4>
@@ -68,6 +78,7 @@ const data = reactive({
         { id: 3, name: '一个月' },
     ],
     tabIndex: 1,
+    yeserDays: [],
 });
 const optionsToday = (time) => {
     return time.getTime() < +new Date().getTime() - 86400000;
@@ -76,8 +87,7 @@ const optionsday = (time) => {
     return time.getTime() > +new Date().getTime() - 86400000;
 };
 const optionsMonth = (time) => {
-    return (
-        new Date().getTime() - 86400000 > +new Date().getTime() + 86400000 * 30
-    );
+    return time.getTime() < +new Date().getTime() + 86400000 * 30;
 };
+const optionsyeserDays = (time) => {};
 </script>
