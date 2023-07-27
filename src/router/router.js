@@ -175,6 +175,15 @@ export const Homes = [
                     icon: 'ele-EditPen',
                 },
             },
+            {
+                path: '/progress',
+                name: 'progress',
+                component: () => import('@/view/Progress/index.vue'),
+                meta: {
+                    title: '进度',
+                    icon: 'ele-EditPen',
+                },
+            },
         ],
     },
 ];
