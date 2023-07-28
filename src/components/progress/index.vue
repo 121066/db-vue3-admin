@@ -9,6 +9,7 @@
                 }"
             ></div>
         </div>
+        <span>{{ props.progress }}%</span>
     </div>
 </template>
 <script setup name="progress">
