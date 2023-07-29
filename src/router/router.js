@@ -184,6 +184,15 @@ export const Homes = [
                     icon: 'ele-EditPen',
                 },
             },
+            {
+                path: '/countup',
+                name: 'countup',
+                component: () => import('@/view/CountUp/index.vue'),
+                meta: {
+                    title: '数字',
+                    icon: 'ele-EditPen',
+                },
+            },
         ],
     },
 ];
