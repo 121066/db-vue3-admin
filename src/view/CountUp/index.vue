@@ -1,52 +1,22 @@
 <template>
     <div>
-        数字增加
-        {{ data.num }}
+        <div class="count">
+            <span>数字</span>
+            <countUp v-for="item in data.list" :key="item" :count="item" />
+        </div>
     </div>
 </template>
 <script setup>
-import { onMounted, reactive } from 'vue';
-
-// const props = defineProps({
-//     count: {
-//         type: Number,
-//         default: 0,
-//     },
-// });
-
-// let data = ref(0);
-let data = reactive({
-  num: 0
+import countUp from '@/components/countUp/index.vue';
+const data = reactive({
+  list: [500, 23, 50, 440, 591, 100]
 })
-onMounted(() => {
-  handleCount();
-});
-
-let handleCount = () => {
-  //   const ctx = document.querySelector('.num');
-  animation(500, 0, 500, (val) => {
-    // ctx.textContent = val;
-    data.num = val.toFixed(0);
-  });
-  function animation (duration, from, to, onProgress) {
-    const dis = to - from;
-    const speed = dis / duration;
-    const startTime = Date.now();
-    let value = to;
-    function _run () {
-      const now = Date.now();
-      const time = now - startTime;
-      if (time >= duration) {
-        value = to;
-        onProgress(value);
-        return;
-      }
-      const d = time * speed;
-      value = from + d;
-      onProgress(value);
-      requestAnimationFrame(_run);
-    }
-    requestAnimationFrame(_run);
-  }
-};
 </script>
+<style lang="scss" scoped>
+.count {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+</style>
