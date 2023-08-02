@@ -1,8 +1,8 @@
 <template>
     <div>
-        <div class="count">
+        <div class="count" v-for="item in data.list" :key="item">
             <span>数字</span>
-            <countUp v-for="item in data.list" :key="item" :count="item" />
+            <countUp :count="item" />
         </div>
     </div>
 </template>
@@ -15,8 +15,12 @@ const data = reactive({
 <style lang="scss" scoped>
 .count {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+    span {
+        font-size: 16px;
+        margin: 8px 16px;
+    }
 }
 </style>
