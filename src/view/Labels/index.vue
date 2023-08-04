@@ -20,6 +20,7 @@
                 :fetch-suggestions="querySearchAsync"
                 @change="intChange"
                 class="search_int"
+                @input="inputChange"
             ></el-input>
             <!-- 下拉面板区域 -->
             <div class="search_list" v-if="searchFlag"></div>
@@ -30,7 +31,8 @@
 import { reactive, ref } from 'vue';
 const int = reactive({
   search: '搜索',
-  searchList: ''
+  searchList: [],
+  intList: []
 })
 const searchFlag = ref(false)
 const data = reactive({
@@ -47,6 +49,14 @@ const querySearchAsync = (e) => {
 }
 const intChange = (e) => {
   console.log(e, 'shus')
+}
+const inputChange = (e) => {
+  console.log(e, '输入')
+  if (!e) return
+  const int = int.searchList.filters(item => {
+    return item.indexOf(e) === 1 ? item : ''
+  })
+  int.intList = int
 }
 </script>
 <style lang="scss" scoped>
