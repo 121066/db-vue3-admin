@@ -23,7 +23,11 @@
                 @input="inputChange"
             ></el-input>
             <!-- 下拉面板区域 -->
-            <div class="search_list" v-if="searchFlag"></div>
+            <div class="search_list" v-if="searchFlag">
+                <div v-if="item in int.searchList" :key="item.id">
+                    {{ item.name }}
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -31,8 +35,8 @@
 import { reactive, ref } from 'vue';
 const int = reactive({
   search: '搜索',
-  searchList: [],
-  intList: []
+  searchList: [{ id: 1, name: '标签', flag: false }],
+  intList: [{ id: 1, name: '标签', flag: false }]
 })
 const searchFlag = ref(false)
 const data = reactive({
@@ -54,7 +58,7 @@ const inputChange = (e) => {
   console.log(e, '输入')
   if (!e) return
   const int = int.searchList.filters(item => {
-    return item.indexOf(e) === 1 ? item : ''
+    return item.name.indexOf(e) === 1 ? item : ''
   })
   int.intList = int
 }
