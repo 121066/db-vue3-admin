@@ -9,7 +9,7 @@
 <script setup>
 import countUp from '@/components/countUp/index.vue';
 const data = reactive({
-  list: [500, 23, 50, 440, 591, 100]
+  list: [500, 23, 50, 440, 591, 100, 1000, 888, 777]
 })
 </script>
 <style lang="scss" scoped>
