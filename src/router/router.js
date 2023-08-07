@@ -163,7 +163,7 @@ export const Homes = [
                 component: () => import('@/view/Editor/index.vue'),
                 meta: {
                     title: '富文本',
-                    icon: 'ele-EditPen',
+                    icon: 'ele-FolderRemove',
                 },
             },
             {
@@ -172,7 +172,7 @@ export const Homes = [
                 component: () => import('@/view/Labels/index.vue'),
                 meta: {
                     title: '标签',
-                    icon: 'ele-EditPen',
+                    icon: 'ele-Compass',
                 },
             },
             {
@@ -181,7 +181,7 @@ export const Homes = [
                 component: () => import('@/view/Progress/index.vue'),
                 meta: {
                     title: '进度',
-                    icon: 'ele-EditPen',
+                    icon: 'ele-Orange',
                 },
             },
             {
@@ -190,6 +190,15 @@ export const Homes = [
                 component: () => import('@/view/CountUp/index.vue'),
                 meta: {
                     title: '数字',
+                    icon: 'ele-GoldMedal',
+                },
+            },
+            {
+                path: '/input',
+                name: 'input',
+                component: () => import('@/view/Input/index.vue'),
+                meta: {
+                    title: '输入框',
                     icon: 'ele-EditPen',
                 },
             },
