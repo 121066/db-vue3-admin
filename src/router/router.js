@@ -202,6 +202,15 @@ export const Homes = [
                     icon: 'ele-EditPen',
                 },
             },
+            {
+                path: '/text',
+                name: 'text',
+                component: () => import('@/view/Text/index.vue'),
+                meta: {
+                    title: '文字显示',
+                    icon: 'ele-EditPen',
+                },
+            },
         ],
     },
 ];
