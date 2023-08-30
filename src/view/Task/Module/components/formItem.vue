@@ -5,7 +5,7 @@
     </div>
 </template>
 <script setup>
-const emit = defineEmits(['update:modelValue'])
+
 
 const props = defineProps({
   modelValue: {
@@ -13,12 +13,12 @@ const props = defineProps({
     required: true
   }
 })
+const emit = defineEmits(['update:modelValue'])
 const keyword = computed({
   get () {
     return props.modelValue.keyword
   },
   set (val) {
-    console.log(val, props.modelValue)
     emit('update:modelValue', {
       ...props.modelValue,
       keyword: val

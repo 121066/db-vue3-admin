@@ -5,6 +5,7 @@
             <el-input
                 class="module_item_int"
                 placeholder="输入组件传值"
+                v-model="int.keyword"
             ></el-input>
         </div>
         <div class="module_item">
@@ -14,13 +15,17 @@
     </div>
 </template>
 <script setup>
+import { ref, watch } from 'vue';
 import FormItem from './components/formItem.vue';
-const int = reactive({
+const int = ref({
   keyword: ''
 })
 const modelValue = (e) => {
   console.log(e, '变化的值')
 }
+watch(int, (value) => {
+  console.log(value)
+})
 </script>
 <style lang="scss" scoped>
 .module {
