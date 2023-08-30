@@ -1,13 +1,11 @@
 <template>
     <div>
-        任务
-        <h1>{{ data.name }}</h1>
-        <h1>{{ data.age }}</h1>
+        <router-view></router-view>
     </div>
 </template>
 <script setup>
 const data = reactive({
-    name: '你好',
-    age: 23,
+  name: '你好',
+  age: 23,
 });
 </script>

@@ -119,6 +119,17 @@ export const Homes = [
                     icon: 'ele-OfficeBuilding',
                 },
                 component: () => import('@/view/Task/index.vue'),
+                children: [
+                    {
+                        path: '/task/module',
+                        name: 'module',
+                        meta: {
+                            title: '组件封装',
+                            icon: 'ele-Bicycle',
+                        },
+                        component: () => import('@/view/Task/Module/index.vue'),
+                    },
+                ],
             },
             {
                 path: '/setting',
