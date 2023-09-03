@@ -129,6 +129,15 @@ export const Homes = [
                         },
                         component: () => import('@/view/Task/Module/index.vue'),
                     },
+                    {
+                        path: '/task/menu',
+                        name: 'menu',
+                        meta: {
+                            title: '右键菜单',
+                            icon: 'ele-Menu',
+                        },
+                        component: () => import('@/view/Task/Menu/index.vue'),
+                    },
                 ],
             },
             {
