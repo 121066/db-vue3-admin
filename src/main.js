@@ -24,6 +24,29 @@ app.directive('dbyxs', (el, binding) => {
 
     // console.log(binding.value.yax, '自定义指令属性');
 });
+app.directive('onsize', (el, binding) => {
+    const map = new WeakMap();
+    const ob = new ResizeObserver((entries) => {
+        for (const iterator of entries) {
+            const handler = map.get(iterator.target);
+            if (handler) {
+                handler({
+                    width: iterator.contentRect.width,
+                    heigth: iterator.contentRect.height,
+                });
+            }
+        }
+    });
+    map.set(el, binding.value);
+    ob.observe(el);
+    //  mounted(el, binding) {
+    //     map.set(el, binding.value);
+    //     ob.observe(el);
+    // }
+    // unmounted(el) {
+    //     ob.unobserve(el);
+    // }
+});
 app.directive('color', (el, binding) => {
     if (!el) return;
     el.style.color = binding.value.color;
