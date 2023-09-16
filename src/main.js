@@ -6,6 +6,7 @@ import * as ElementPlusIconsVue from '@element-plus/icons-vue';
 import ElementPlus from 'element-plus';
 import 'element-plus/dist/index.css';
 import App from './App.vue';
+import directive from './directive';
 import { router } from './router';
 import './style.css';
 import './style/index.scss';
@@ -47,13 +48,14 @@ app.directive('onsize', (el, binding) => {
     //     ob.unobserve(el);
     // }
 });
-app.directive('color', (el, binding) => {
-    if (!el) return;
-    el.style.color = binding.value.color;
-});
+// app.directive('color', (el, binding) => {
+//     if (!el) return;
+//     el.style.color = binding.value.color;
+// });
 app.directive('value', (el, binding) => {
     if (!el) return;
     el.innerHTML = binding.value.val;
 });
+app.use(directive);
 app.component('SvgIcon', SvgIcon);
 app.use(pinia).use(ElementPlus).use(router).mount('#app');

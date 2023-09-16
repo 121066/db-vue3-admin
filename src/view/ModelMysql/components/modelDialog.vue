@@ -52,10 +52,11 @@
 import { ref } from 'vue';
 
 const centerDialogVisible = ref(false)
-const addRef = () => {
-  centerDialogVisible = true
+const addRef = (value) => {
+  console.log(value, '我是父组件传值过来的')
 }
 defineExpose({
-  centerDialogVisible
+  centerDialogVisible,
+  addRef
 })
 </script>

@@ -7,7 +7,7 @@
         ></el-input>
 
         <div v-dbyxs>测试自定义指令背景颜色</div>
-        <div v-color="{ color: 'red' }">测试自定义文字颜色</div>
+        <div v-color="{ color: '#00a4ff' }">测试自定义文字颜色</div>
         <div v-color="{ color: 'orange' }">测试自定义文字颜色</div>
         <div v-value="{ val: state.val }">测试自定义文字变化</div>
         <CardList ref="card"></CardList>
@@ -32,29 +32,29 @@ import { getGoodsList } from '@/api/goods';
 import { onMounted, provide, reactive } from 'vue';
 import CardList from './components/card.vue';
 const state = reactive({
-    dataList: [],
-    val: '',
-    password: '',
+  dataList: [],
+  val: '',
+  password: '',
 });
 const userName = reactive({
-    name: '你好',
+  name: '你好',
 });
 provide('userName', {
-    userName,
+  userName,
 });
 const card = ref('card');
 const search = async () => {
-    let { message } = await getGoodsList();
-    state.dataList = message;
-    console.log(state.dataList);
+  let { message } = await getGoodsList();
+  state.dataList = message;
+  console.log(state.dataList);
 };
 const addItem = () => {
-    console.log(card.value.init('我的天啊'), '子组件');
-    let user = card.value.user.userName.name;
-    console.log(user, 'user');
+  console.log(card.value.init('我的天啊'), '子组件');
+  let user = card.value.user.userName.name;
+  console.log(user, 'user');
 };
 onMounted(() => {
-    search();
+  search();
 });
 </script>
 <style lang="scss">

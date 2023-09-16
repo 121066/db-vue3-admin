@@ -1,6 +1,6 @@
 <template>
     <div>
-        <el-input v-model="int" placeholder="请输入内容"></el-input>
+        <el-input v-model="int" placeholder="子组件请输入内容"></el-input>
         <el-dialog v-model="val" title="新增" width="50%" align-center>
             <div>
                 <el-form>
@@ -46,15 +46,25 @@ const props = defineProps({
   modelValue: {
     type: Boolean,
     default: false
+  },
+  str: {
+    type: String,
+    default: ''
   }
 })
 const init = ref(false)
-const emit = defineEmits(['update:modelValue'])
+const emit = defineEmits(['update:modelValue', 'update:str'])
 watch(() => props.modelValue, (newValue, oldValue) => {
   console.log(newValue, '新的值')
 })
-const int = computed(() => {
-  return int.str
+const int = computed({
+  get () {
+    return props.str
+  },
+  set (value) {
+    console.log(value, '>><<')
+    emit('update:str', value)
+  }
 })
 const val = computed(() => {
   return props.modelValue
