@@ -103,6 +103,15 @@ export const Homes = [
                 },
             },
             {
+                path: '/modelmysql',
+                name: 'modelmysql',
+                component: () => import('@/view/ModelMysql/index.vue'),
+                meta: {
+                    title: '开发传输',
+                    icon: 'ele-EditPen',
+                },
+            },
+            {
                 path: '/date',
                 name: 'date',
                 component: () => import('@/view/Date/index.vue'),

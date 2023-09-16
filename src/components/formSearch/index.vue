@@ -123,49 +123,58 @@
 </template>
 <script setup>
 import zhCn from 'element-plus/dist/locale/zh-cn.mjs';
+
 const locale = ref(zhCn);
 const props = defineProps({
-    opts: {
-        type: Array,
-        default: () => [],
-    },
-    span: {
-        type: Number,
-        default: 6,
-    },
-    searchBtn: {
-        type: Boolean,
-        default: true,
-    },
+  opts: {
+    type: Array,
+    default: () => [],
+  },
+  span: {
+    type: Number,
+    default: 6,
+  },
+  searchBtn: {
+    type: Boolean,
+    default: true,
+  },
 });
 const formSearch = defineEmits(['formSearch']);
 let formData = reactive({});
 const copyForm = reactive({});
 const resetForm = reactive({});
 const optsList = computed(() => {
-    return props.opts;
+  return props.opts;
 });
 const search = () => {
-    const search = { ...formData, ...copyForm };
-    formSearch('formSearch', search);
+  const search = { ...formData, ...copyForm };
+  formSearch('formSearch', search);
 };
 const reset = () => {
-    for (const key in formData) {
-        formData[key] = '';
-    }
-    formSearch('formSearch', {});
+  for (const key in formData) {
+    formData[key] = '';
+  }
+  formSearch('formSearch', {});
 };
+const formDataFlag = (val) => {
+  console.log(val, '>><<<<')
+}
+const getForm = () => {
+  console.log('来了')
+}
 const change = (key, key2) => {
-    const val = formData[key];
-    if (key2) {
-        copyForm[key] = val[0];
-        copyForm[key2] = val[1];
-    }
+  const val = formData[key];
+  if (key2) {
+    copyForm[key] = val[0];
+    copyForm[key2] = val[1];
+  }
 };
 defineExpose({
-    formData,
-    search,
-    reset,
+  formData,
+  search,
+  reset,
+  formDataFlag,
+  getForm
 });
 </script>
 <style lang="scss">
@@ -179,7 +188,7 @@ defineExpose({
 }
 .form_item {
     width: 23%;
-    margin: 5px 15px;
+    margin: 5px 0 5px 15px;
     display: flex;
     flex-direction: row;
     justify-content: flex-start;

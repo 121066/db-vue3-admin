@@ -26,6 +26,7 @@ export default defineConfig((mode) => {
         //配置代理
         server: {
             host: '127.0.0.1',
+            hmr: true,
             // lintOnSave: false,
             //配置默认端口
             port: '8866',
