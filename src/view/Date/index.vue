@@ -91,10 +91,10 @@ const optionsToday = (time) => {
   return time.getTime() < +new Date().getTime() - 86400000;
 };
 const optionsday = (time) => {
-  return time.getTime() > +new Date().getTime() - 86400000;
+  return time.getTime() > +new Date().getTime() - 86400000
 };
 const optionsMonth = (time) => {
-  return time.getTime() < +new Date().getTime() + 86400000 * 30;
+  return time.getTime() < +new Date().getTime() + 86400000 * 30
 };
 const reduceCount = () => {
   intNum.value += 2

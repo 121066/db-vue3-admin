@@ -1,4 +1,4 @@
-import { defineStore } from 'pinia';
+import { defineStore } from 'pinia'
 export const useRoutesList = defineStore('routesList', {
     state: () => ({
         routesList: [],
@@ -6,7 +6,7 @@ export const useRoutesList = defineStore('routesList', {
     }),
     actions: {
         async setRoutesList(data) {
-            this.routesList = data;
+            this.routesList = data
         },
     },
-});
+})
