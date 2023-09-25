@@ -65,29 +65,46 @@
                 />
             </div>
         </div>
+        <h1>count{{ count }}</h1>
+        <el-button type="primary" @click="addCount">添加</el-button>
+        <el-button type="primary" @click="reduceCount">减少</el-button>
+        <el-input v-model.number="intNum"></el-input>
     </div>
 </template>
 <script setup>
+import { useInitCount } from '@/useState/index.js';
+import { ref } from 'vue';
+const intNum = ref(22)
 const data = reactive({
-    toDay: '',
-    optionsToday: {},
-    yeserDay: '',
-    tabList: [
-        { id: 1, name: '今天' },
-        { id: 2, name: '一周' },
-        { id: 3, name: '一个月' },
-    ],
-    tabIndex: 1,
-    yeserDays: [],
+  toDay: '',
+  optionsToday: {},
+  yeserDay: '',
+  tabList: [
+    { id: 1, name: '今天' },
+    { id: 2, name: '一周' },
+    { id: 3, name: '一个月' },
+  ],
+  tabIndex: 1,
+  yeserDays: [],
 });
 const optionsToday = (time) => {
-    return time.getTime() < +new Date().getTime() - 86400000;
+  return time.getTime() < +new Date().getTime() - 86400000;
 };
 const optionsday = (time) => {
-    return time.getTime() > +new Date().getTime() - 86400000;
+  return time.getTime() > +new Date().getTime() - 86400000;
 };
 const optionsMonth = (time) => {
-    return time.getTime() < +new Date().getTime() + 86400000 * 30;
+  return time.getTime() < +new Date().getTime() + 86400000 * 30;
 };
-const optionsyeserDays = (time) => {};
+const reduceCount = () => {
+  intNum.value += 2
+}
+const addCount = () => {
+  intNum.value += 2
+  console.log(intNum)
+}
+const optionsyeserDays = (time) => { };
+const { count, addFn } = useInitCount(intNum)
+addFn(intNum.value)
+console.log(count, 'count', intNum)
 </script>
