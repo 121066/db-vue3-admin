@@ -55,6 +55,7 @@ app.directive('value', (el, binding) => {
     if (!el) return
     el.innerHTML = binding.value.val
 })
+app.use(router)
 app.use(directive)
 app.component('SvgIcon', SvgIcon)
-app.use(pinia).use(ElementPlus).use(router).mount('#app')
+app.use(pinia).use(ElementPlus).mount('#app')

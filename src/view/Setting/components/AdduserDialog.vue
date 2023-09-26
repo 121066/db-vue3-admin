@@ -76,13 +76,15 @@ let addForm = reactive({
   name: '',
   password: '',
   age: '',
-  rule: []
+  rule: '',
+  id: new Date().getTime()
 })
 const emit = defineEmits(['update:modelValue', 'submitUser'])
 const centerDialogVisible = computed(() => {
   return props.modelValue
 })
 const addFroms = ref(null)
+const type = ref('add')
 const rules = {
   name: [{ required: true, message: '请输入用户名称', target: 'blur' }],
   password: [{ required: true, message: '请输入用户密码', target: 'blur' }],
@@ -108,7 +110,7 @@ const addConfirm = () => {
   addFroms.value.validate((isValid, invalidFields) => {
     if (isValid) {
       let form = JSON.parse(JSON.stringify(addForm))
-      emit('submitUser', form)
+      emit('submitUser', form, type.value)
       close()
     } else {
       console.log(invalidFields)
@@ -120,6 +122,7 @@ const addConfirm = () => {
 const updateEdit = (e) => {
   const from = reactive({ ...e })
   Object.assign(addForm, from)
+  type.value = 'edit'
 }
 defineExpose({
   updateEdit

@@ -1,7 +1,7 @@
 <template>
     <div>
         <div>
-            <Progress
+            <ProgressItem
                 v-for="item in data.list"
                 :key="item.id"
                 :progress="item.progress"
@@ -11,7 +11,7 @@
     </div>
 </template>
 <script setup>
-import Progress from '@/components/progress/index.vue';
+import ProgressItem from '@/components/progress/index.vue';
 import { reactive } from 'vue';
 const data = reactive({
   list: [

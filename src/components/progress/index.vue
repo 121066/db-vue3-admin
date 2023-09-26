@@ -12,18 +12,17 @@
         <span>{{ props.progress }}%</span>
     </div>
 </template>
-<script setup name="progress">
+<script setup name="progressitem">
 const props = defineProps({
-    progress: {
-        type: Number,
-        default: 0,
-    },
-    color: {
-        type: String,
-        default: 'red',
-    },
+  progress: {
+    type: Number,
+    default: 0,
+  },
+  color: {
+    type: String,
+    default: 'red',
+  },
 });
-console.log(props, '');
 </script>
 <style lang="scss" scoped>
 .progress {
@@ -31,6 +30,11 @@ console.log(props, '');
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
+    span {
+        margin-left: 8px;
+        font-size: 12px;
+        color: #999;
+    }
 }
 .progress_bg {
     width: 100%;

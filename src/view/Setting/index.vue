@@ -12,7 +12,9 @@
                     <el-button link type="primary" @click="update(scope)"
                         >编辑</el-button
                     >
-                    <el-button link type="primary">删除</el-button>
+                    <el-button link type="primary" @click="deleteRule(scope)"
+                        >删除</el-button
+                    >
                 </template>
             </el-table-column>
         </el-table>
@@ -33,7 +35,7 @@ const userDialog = ref(false)
 const store = useAuthority()
 const { rule, authName } = storeToRefs(store)
 const rules = computed(() => {
-  return rule.value
+  return store.getRule
 })
 const adduserDialog = ref(null)
 // 添加用户
@@ -41,9 +43,18 @@ const addUser = () => {
   userDialog.value = true
 }
 // 添加数据
-const submitUser = (e) => {
-  store.setRule(e)
-  ElMessage.success('添加成功')
+const submitUser = (e, type) => {
+  const msg = {
+    'add': '添加成功',
+    'edit': '修改成功'
+  }
+  if (type === 'add') {
+    store.setRule(e)
+
+  } else {
+    store.updateRule(e)
+  }
+  ElMessage.success(msg[type])
 }
 // 修改数据
 const update = (e) => {
@@ -52,5 +63,10 @@ const update = (e) => {
   nextTick(() => {
     adduserDialog.value.updateEdit(row)
   })
+}
+// 删除数据
+const deleteRule = (e) => {
+  store.deleteRule(e.$index)
+  ElMessage.success('删除成功')
 }
 </script>
