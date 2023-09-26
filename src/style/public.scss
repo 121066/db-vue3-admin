@@ -1,0 +1,26 @@
+.flex_r{
+    display: flex;
+    flex-direction: row;
+}
+.flex_c{
+    display: flex;
+    flex-direction: column;
+}
+.flex_bewtten{
+    justify-content: space-between;
+}
+.flex_start{
+    justify-content: flex-start;
+}
+.flex_end{
+    justify-content: flex-end;
+}
+.flex_item_center{
+    align-items: center;
+}
+.m8{
+    margin: 8px;
+}
+.m8_b{
+    margin-bottom: 8px;
+}
