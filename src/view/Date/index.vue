@@ -97,14 +97,12 @@ const optionsMonth = (time) => {
   return time.getTime() < +new Date().getTime() + 86400000 * 30
 };
 const reduceCount = () => {
-  intNum.value += 2
+  intNum.value -= 2
 }
 const addCount = () => {
   intNum.value += 2
-  console.log(intNum)
 }
 const optionsyeserDays = (time) => { };
 const { count, addFn } = useInitCount(intNum)
 addFn(intNum.value)
-console.log(count, 'count', intNum)
 </script>

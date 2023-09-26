@@ -1,12 +1,12 @@
-import vue from '@vitejs/plugin-vue';
-import { resolve } from 'path';
-import AutoImport from 'unplugin-auto-import/vite';
-import { defineConfig, loadEnv } from 'vite';
-import vueSetupExtend from 'vite-plugin-vue-setup-extend';
+import vue from '@vitejs/plugin-vue'
+import { resolve } from 'path'
+import AutoImport from 'unplugin-auto-import/vite'
+import { defineConfig, loadEnv } from 'vite'
+import vueSetupExtend from 'vite-plugin-vue-setup-extend'
 // https://vitejs.dev/config/
 
 export default defineConfig((mode) => {
-    const env = loadEnv(mode.mode, process.cwd());
+    const env = loadEnv(mode.mode, process.cwd())
     // console.log(env.VITE_API_URL_API, '???', process.cwd(), 'cwd?');
     return {
         plugins: [
@@ -25,6 +25,7 @@ export default defineConfig((mode) => {
         base: env.VITE_API_NAME,
         //配置代理
         server: {
+            hot: true,
             host: '127.0.0.1',
             hmr: true,
             // lintOnSave: false,
@@ -72,5 +73,5 @@ export default defineConfig((mode) => {
         //         },
         //     },
         // },
-    };
-});
+    }
+})

@@ -22,7 +22,7 @@ let key = useRoute()
 }
 .fade-enter-active,
 .fade-leave-active {
-    transition: opacity 0.28s;
+    transition: opacity 0.28s ease-in-out;
 }
 
 .fade-enter,
@@ -38,11 +38,11 @@ let key = useRoute()
 
 .fade-transform-enter {
     opacity: 0;
-    transform: translateX(-30px);
+    transform: translateX(-20px);
 }
 
 .fade-transform-leave-to {
     opacity: 0;
-    transform: translateX(30px);
+    transform: translateX(20px);
 }
 </style>

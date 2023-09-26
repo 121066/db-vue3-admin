@@ -1,6 +1,6 @@
 <template>
     <div class="layout">
-        <div>
+        <div class="layout_header">
             <Header></Header>
         </div>
         <div class="main_content">
@@ -21,13 +21,17 @@ import Side from './side/index.vue';
     height: 100vh;
     position: relative;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.layout_header {
+    height: 70px;
 }
 .main_content {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    // margin: 10px 0 0 0;
-    height: 100%;
+    flex: 1;
     background: #f2f2f2;
 }
 .main_left {
@@ -37,7 +41,6 @@ import Side from './side/index.vue';
     flex: 1;
     background: #fff;
     // position: relative;
-    // height: calc(100% - 90px);
     // width: 100%;
     // background-color: #f2f2f2;
     overflow: hidden;
@@ -46,7 +49,4 @@ import Side from './side/index.vue';
     margin: 10px;
     border-radius: 3px;
 }
-//  ::-webkit-scrollbar{
-//    display: none;
-//   }
 </style>

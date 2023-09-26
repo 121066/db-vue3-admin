@@ -71,7 +71,7 @@ export const Home = [
             icon: 'ele-Setting',
         },
     },
-];
+]
 export const Homes = [
     {
         path: '/',
@@ -112,12 +112,21 @@ export const Homes = [
                 },
             },
             {
+                path: '/dictionary',
+                name: 'dictionary',
+                component: () => import('@/view/Dictionary/index.vue'),
+                meta: {
+                    title: '字典服务',
+                    icon: 'ele-Coin',
+                },
+            },
+            {
                 path: '/date',
                 name: 'date',
                 component: () => import('@/view/Date/index.vue'),
                 meta: {
                     title: '日期',
-                    icon: 'ele-Date',
+                    icon: 'ele-AlarmClock',
                 },
             },
             {
@@ -242,4 +251,4 @@ export const Homes = [
             },
         ],
     },
-];
+]
