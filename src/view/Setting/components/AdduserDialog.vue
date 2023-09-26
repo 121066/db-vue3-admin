@@ -1,6 +1,7 @@
 <template>
     <div>
         <el-dialog
+            @opened="opened"
             v-model="centerDialogVisible"
             title="新增"
             width="50%"
@@ -64,13 +65,14 @@
 </template>
 <script setup>
 import { computed, reactive, ref } from 'vue';
+// import _ from 'lodash'
 const props = defineProps({
   modelValue: {
     type: Boolean,
     default: false
   }
 })
-const addForm = reactive({
+let addForm = reactive({
   name: '',
   password: '',
   age: '',
@@ -89,24 +91,37 @@ const rules = {
 }
 // 关闭
 const close = () => {
+
   emit('update:modelValue', false)
+  addFroms.value.resetFields()
 }
 // 打开
 const open = () => {
   console.log('打开')
-  addFroms.value.resetFields()
+  //   
+}
+const opened = () => {
+  console.log('打开2')
 }
 // 确定
 const addConfirm = () => {
   addFroms.value.validate((isValid, invalidFields) => {
     if (isValid) {
-      emit('submitUser', addForm)
+      let form = JSON.parse(JSON.stringify(addForm))
+      emit('submitUser', form)
       close()
     } else {
       console.log(invalidFields)
       console.log('验证不通过,不能提交,请检查')
     }
   })
-
 }
+// 赋值编辑
+const updateEdit = (e) => {
+  const from = reactive({ ...e })
+  Object.assign(addForm, from)
+}
+defineExpose({
+  updateEdit
+})
 </script>

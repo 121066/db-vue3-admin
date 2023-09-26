@@ -36,7 +36,7 @@
     </div>
 </template>
 <script setup>
-// import { Homes } from '@/router/router.js'
+import { Homes } from '@/router/router.js'
 import { useRoutesList } from '@/stores/routesList'
 import { onMounted } from '@vue/runtime-core'
 import { storeToRefs } from 'pinia'
@@ -48,8 +48,8 @@ const handleOpen = () => { }
 const handleClose = () => { }
 //获取菜单数据
 const menuList = computed(() => {
-  // return Homes[0].children
-  return routesList.value
+  return Homes[0].children
+  // return routesList.value
 })
 const defaultActive = computed(() => {
   let r = useRoute()

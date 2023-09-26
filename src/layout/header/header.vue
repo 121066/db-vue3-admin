@@ -3,7 +3,7 @@
         <div class="header_left">组件测试系统</div>
         <div class="header_right">
             <el-dropdown>
-                <el-button type="text" class="btn"> 设置 </el-button>
+                <el-button link type="primary" class="btn"> 设置 </el-button>
                 <template #dropdown>
                     <el-dropdown-menu>
                         <el-dropdown-item>
@@ -14,7 +14,7 @@
                     </el-dropdown-menu>
                 </template>
             </el-dropdown>
-            <el-button class="btn" type="text">退出</el-button>
+            <el-button class="btn" link type="primary">退出</el-button>
         </div>
     </div>
 </template>

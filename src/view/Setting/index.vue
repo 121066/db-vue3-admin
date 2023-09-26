@@ -7,16 +7,27 @@
             <el-table-column label="管理员名称" prop="name"></el-table-column>
             <el-table-column label="登录密码" prop="password"></el-table-column>
             <el-table-column label="年龄" prop="age"></el-table-column>
-            <el-table-column label="操作"></el-table-column>
+            <el-table-column label="操作">
+                <template #default="scope">
+                    <el-button link type="primary" @click="update(scope)"
+                        >编辑</el-button
+                    >
+                    <el-button link type="primary">删除</el-button>
+                </template>
+            </el-table-column>
         </el-table>
+        <AdduserDialog
+            v-model="userDialog"
+            @submitUser="submitUser"
+            ref="adduserDialog"
+        />
     </div>
-    <AdduserDialog v-model="userDialog" @submitUser="submitUser" />
 </template>
 <script setup>
 import { useAuthority } from '@/stores/authority.js';
 import { ElMessage } from 'element-plus';
 import { storeToRefs, } from 'pinia';
-import { ref } from 'vue';
+import { nextTick, ref } from 'vue';
 import AdduserDialog from './components/AdduserDialog.vue';
 const userDialog = ref(false)
 const store = useAuthority()
@@ -24,6 +35,7 @@ const { rule, authName } = storeToRefs(store)
 const rules = computed(() => {
   return rule.value
 })
+const adduserDialog = ref(null)
 // 添加用户
 const addUser = () => {
   userDialog.value = true
@@ -33,5 +45,12 @@ const submitUser = (e) => {
   store.setRule(e)
   ElMessage.success('添加成功')
 }
-
+// 修改数据
+const update = (e) => {
+  userDialog.value = true
+  const row = JSON.parse(JSON.stringify(e.row))
+  nextTick(() => {
+    adduserDialog.value.updateEdit(row)
+  })
+}
 </script>

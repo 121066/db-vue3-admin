@@ -5,7 +5,7 @@
         <div class="bg">你好</div>
     </div>
 </template>
-<script setup>
+<script setup name="goods">
 import formSearch from '@/components/formSearch/index.vue';
 import { ref } from 'vue';
 // import { formSearch } from '../../../lib/db-formsearch-plus.js';

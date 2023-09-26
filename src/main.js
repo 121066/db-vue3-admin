@@ -15,7 +15,6 @@ for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
     app.component(`ele-${key}`, component)
 }
 app.directive('dbyxs', (el, binding) => {
-    console.log(el, '自定义指令')
     // const e = el.querySelector('.el-input__wrapper');
     // e.querySelector('.el-input__inner').focus();
     const e = el.querySelector('input')
