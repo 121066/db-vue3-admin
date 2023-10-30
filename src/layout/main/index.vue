@@ -3,7 +3,7 @@
         <router-view v-slot="{ Component }">
             <transition name="fade-transform" mode="out-in">
                 <keep-alive :include="[]">
-                    <component :is="Component" :key="key.path" class="w100" />
+                    <component :is="Component" class="w100" />
                 </keep-alive>
             </transition>
         </router-view>
@@ -13,7 +13,8 @@
 import { useRoute } from 'vue-router';
 
 let key = useRoute()
-// console.log(key.path)
+console.log(key.path)
+// :key="key.path"
 </script>
 <style lang="scss">
 .content_main {
