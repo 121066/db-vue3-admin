@@ -65,7 +65,7 @@ export const Home = [
     {
         path: '/goods',
         name: 'goods',
-        component: () => import('@/view/Goods/index.vue'),
+        component: () => import('@/view/goods/index.vue'),
         meta: {
             title: '商品',
             icon: 'ele-Setting',

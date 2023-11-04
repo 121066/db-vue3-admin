@@ -1,5 +1,6 @@
 <script setup>
-import zhCn from 'element-plus/lib/locale/lang/zh-cn';
+// import zhCn from 'element-plus/lib/locale/lang/zh-cn';
+import zhCn  from 'element-plus/dist/locale/zh-cn.mjs';
 const locale = ref(zhCn);
 </script>
 

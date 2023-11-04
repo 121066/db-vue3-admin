@@ -7,7 +7,7 @@
 </template>
 <script setup name="goods">
 import formSearch from '@/components/formSearch/index.vue';
-import { ref } from 'vue';
+import { ref } from 'vue'
 // import { formSearch } from '../../../lib/db-formsearch-plus.js';
 // import '../../../lib/style.css';
 let form = ref(null);
