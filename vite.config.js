@@ -55,6 +55,15 @@ export default defineConfig((mode) => {
                 },
             },
         },
+        build: {
+            rollupOptions: {
+                manualChunks(id) {
+                    if (id.indexOf('node_modules')) {
+                        return 'vendor'
+                    }
+                }
+            }
+        }
         // build: {
         //     outDir: 'lib',
         //     lib: {
